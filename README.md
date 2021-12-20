@@ -1,7 +1,9 @@
 # log4jScanner
 
  log4jScanner.sh is a BASH script to confirm the vulnerability (CVE-2021-44228) of a given IP/URL.
- This script validates the return traffic on 4 protocols ldap | ldaps | rmi | dns 
+ 
+ And the script validates the return traffic on 4 protocols ldap | ldaps | rmi | dns 
+ 
  The testing methedology is completely noninvasive. 
  
 ## Requirements
