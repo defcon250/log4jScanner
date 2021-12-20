@@ -6,6 +6,14 @@
  
  The testing methedology is completely noninvasive. 
  
+ ## Attack Vector:
+ 
+ First and foremost, I suggest reviewing the provided pcapng file in wireshark for a thorough understanding of a attack vector. 
+ The pcapng file captured the complete start-to-end of the traffic related to a compromised target in lab environment.
+ 
+ For your reference, 192.168.190.100 is the attacker's IP, and 192.168.190.44 is the victim's IP. 
+ 
+ 
 ## Requirements
 
 If you prefer to test the internet facing target, then this test requires to be executed on a DMZ host,
