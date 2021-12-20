@@ -11,7 +11,8 @@
 If you prefer to test the internet facing target, then this test requires to be executed on a DMZ host,
 on which you can open desired port for scanner's return traffic from the target. I have used and tested on free tier AWS EC2 Kali Linux instance. 
 
-If you prefer to test the intranet facing target, then you simply make sure that scanner-port is reachable to the target. 
+If you prefer to test the intranet facing target, then you simply make sure that Scanner-Return-Traffic-Port is reachable to the target. 
+
 [Example: ./log4jScanner.sh 192.168.1.100:443 1389]
 
 ## Prepare the Kali instance with the below mentioned packages.
