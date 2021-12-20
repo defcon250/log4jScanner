@@ -14,7 +14,7 @@
  For your reference, 192.168.190.100 and 1389 are the attacker's IP/Port, and 192.168.190.44:8080 are the victim's (Tomcat) IP/Port. 
  
 ---
-Note: Do not forget to add the visibility of SourcePort and DstinationPort in your wireshark setting's column preferences. 
+Note: Do not forget to add the visibility of SourcePort and DstinationPort, in your wireshark setting's column preferences. 
 
 ---
 ## Requirements
