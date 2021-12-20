@@ -28,7 +28,7 @@ git clone https://github.com/defcon250/log4jScanner
 ## Usage
 
 ```bash
-
+  cd ./log4jScanner
   ./log4jScanner.sh  <Target-IP>:<Target-Port>  <Scanner's-Return-Traffic-Port>  
   
   [Example: ./log4jScanner.sh 192.168.1.100:443 1389]
