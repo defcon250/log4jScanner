@@ -62,6 +62,8 @@ rm -f ./"$IP".out; cat /var/log/messages | awk "/$START_TIME/,/$STOP_TIME/" | gr
 echo ""
 if [ -s /tmp/"$IP".out ]; then echo "$IP ${red}Is Vulnerable to CVE-2021-44228${reset}"; else echo "$IP ${green}Is Not Vulnerable to CVE-2021-44228${reset}";fi
 
+echo ""
+echo ""
 
 
 
