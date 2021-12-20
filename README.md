@@ -2,16 +2,16 @@
 
  log4jScanner.sh is a BASH script to validate the vulnerability (CVE-2021-44228) of a given IP/URL.
  
- And the script validates the existence of the vulnerability based on the **RETURN traffic of 4 protocols ldap | ldaps | rmi | dns 
+ The script perfectly validates the existence of the vulnerability based on the *RETURN* traffic of 4 protocols ldap | ldaps | rmi | dns 
  
- The testing methedology is completely noninvasive. 
+ Thus, the testing methedology is completely safe and non-invasive. 
  
  ## Attack Vector:
  
- First and foremost, I suggest reviewing the provided pcapng file in wireshark for a thorough understanding of a attack vector. 
- The pcapng file captured the complete start-to-end of the traffic related to a compromised target in lab environment.
+ First and foremost, I suggest reviewing the provided pcapng file in wireshark for a thorough understanding of the attack vector. 
+ The pcapng file captured complete start-to-end traffic of a perfectly compromised target in lab environment.
  
- For your reference, 192.168.190.100 is the attacker's IP, and 192.168.190.44 is the victim's IP. 
+ For your reference, 192.168.190.100 and 1389 are the attacker's IP/Port, and 192.168.190.44:8080 are the victim's (Tomcat) IP/Port. 
  
  
 ## Requirements
