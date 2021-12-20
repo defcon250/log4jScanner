@@ -13,8 +13,9 @@
  
  For your reference, 192.168.190.100 and 1389 are the attacker's IP/Port, and 192.168.190.44:8080 are the victim's (Tomcat) IP/Port. 
  
- [X] Note: Do not forget to add the visibility of SourcePort and DstinationPort in your wireshark setting's column preferences. 
- 
+ ---
+ **Note: Do not forget to add the visibility of SourcePort and DstinationPort in your wireshark setting's column preferences. 
+ ---
 ## Requirements
 
 If you prefer to test the internet facing target, then this test requires to be executed on a DMZ host,
