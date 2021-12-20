@@ -13,13 +13,14 @@ Prepare the Kali instance with the below mentioned packages.
 
 ```bash
  apt install iptables iptables-persistence rsyslog curl vim
+ 
  systemctl restart rsyslog
  
 ```
 ## Usage
 
 ```bash
-  ./log4jScanner.sh  target-port>:<target-port>  <scanner's-return-traffic-port>  
+  ./log4jScanner.sh  <Target-IP>:<Target-Port>  <Scanner's-Return-Traffic-Port>  
   
   [Example: ./log4jScanner.sh 192.168.1.100:443 1389]
 
